@@ -1,7 +1,21 @@
+@keyframes grow {
+    from {
+        width: 25px;
+        opacity: 0;
+    }
+    to {
+        width: 475px;
+        opacity: 1;
+    }
+}
+
+#logo {
+    animation: grow 5s;
+}
+
 body {
     font-family: 'Poppins', serif;
-    background-image: url("../images/concrete_seamless.png");
-    background-color: #f1f1f1;
+    background: url("../images/concrete_seamless.png"), #f1f1f1;
 }
 
 header {
@@ -17,21 +31,7 @@ header {
     flex-wrap: nowrap;
 }
 
-#logo {
-    animation: grow 5s;
-}
-
-@keyframes grow {
-    from {
-        width: 25px;
-        opacity: 0;
-    }
-    to {
-        width: 475px;
-        opacity: 1;
-    }
-}
-
+/* Keep visited links the same color */
 a:active, a:visited {
     color: blue;
 }
@@ -46,7 +46,6 @@ a:active, a:visited {
 .card {
     border-radius: 50px 50px 0 0;
     flex-basis: 450px;
-    flex-direction: column;
 }
 
 .pricing {
@@ -92,7 +91,9 @@ a:active, a:visited {
     .skip + header {
         /* First header remain visible upon scroll */
         position: sticky;
+        /* Maintain 0px from top */
         top: 0;
+        /* Stay in front of all other elements */
         z-index: 1;
     }
 }
